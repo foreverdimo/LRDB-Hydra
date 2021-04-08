@@ -1,0 +1,11 @@
+log_dir: ${name}/
+checkpoint: ./outputs/train/2021-01-29/lr0.0001/models/model_best.pth
+
+dataset:
+    _target_: srcs.data_loader.data_loaders.get_datasets
+    dst_dir: /disk/syj/PIPAL_Train/Distortion_Val
+    ref_dir: /disk/syj/PIPAL_Train/Val_Ref
+
+defaults:
+  - hydra/job_logging : custom
+  - hydra/run/dir: no_chdir

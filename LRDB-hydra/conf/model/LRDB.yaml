@@ -1,0 +1,14 @@
+# @package _global_
+name: LRDB
+arch:
+  _target_: srcs.model.model.LRDB
+loss:
+  _target_: srcs.model.loss.IQALoss
+  loss_type: l1
+optimizer:
+  _target_: torch.optim.Adam
+  lr: ${learning_rate}
+lr_scheduler:
+  _target_: torch.optim.lr_scheduler.StepLR
+  step_size: ${scheduler_step_size}
+  gamma: ${scheduler_gamma}

@@ -1,0 +1,11 @@
+# @package data_loader
+_target_: srcs.data_loader.data_loaders.get_data_loaders
+datasets:
+  _target_: srcs.data_loader.data_loaders.get_datasets
+  dst_dir: /disk/syj/PIPAL_Train/Distortion_Train
+  ref_dir: /disk/syj/PIPAL_Train/Train_Ref
+  label_dir: /disk/syj/PIPAL_Train/Train_Label
+  train_mode: single
+batch_size: ${batch_size}
+shuffle: true
+num_workers: ${n_cpu}

@@ -1,0 +1,16 @@
+log_dir: ${name}/
+resume:
+
+metrics:
+  - _target_: srcs.model.metric.srocc
+  - _target_: srcs.model.metric.plcc
+
+defaults:
+  - data: pipal_train
+  - model: LRDB
+  - hparams: LRDB_baseline
+
+  - status: train
+
+  - hydra/job_logging : custom
+  - hydra/run/dir: job_timestamp

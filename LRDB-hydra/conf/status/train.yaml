@@ -1,0 +1,16 @@
+# @package _global_
+save_dir: models/
+resume:
+status: train
+
+n_gpu: 1
+n_cpu: 1
+trainer:
+  epochs: 40
+  logging_step: 100
+
+  monitor: max srocc/valid
+  save_topk: 3
+  early_stop: 5
+
+  tensorboard: true
